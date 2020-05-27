@@ -13,5 +13,5 @@ export default function Col(props) {
       .join(" ");
     return <div className={`${lgsize} ${mobsize} ${visibility}`} {...props} />;
   }
-  return <div className={`${lgsize} ${visibility}`} {...props} />;
+  return <div className={`${visibility} ${lgsize}`} {...props} />;
 }
