@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Wrapper from "./components/Wrapper";
 import Main from "./pages/Main";
-// import Projects from "./pages/Projects";
-// import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 
 const App = () => {
