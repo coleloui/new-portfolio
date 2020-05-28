@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useState, useEffect } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 
 export default function Navbar() {
   return (
@@ -8,16 +8,15 @@ export default function Navbar() {
       className="grid bg-teal-400 rounded-md font-bold h-10 border-4 border-teal-600 sticky top-0"
     >
       <div className="text-center flex justify-around self-center">
-        Louis Coleman
-        {/* <Link to="/" className="hover:underline hover:text-gray-600">
-          Home
+        <Link smooth to="/#bio">
+          About Me
         </Link>
-        <Link to="/projects" className="hover:underline hover:text-gray-600">
+        <Link smooth to="/#project">
           Projects
         </Link>
-        <Link to="/contact" className="hover:underline hover:text-gray-600">
+        <Link smooth to="/#contact">
           Contact Me
-        </Link> */}
+        </Link>
       </div>
     </div>
   );

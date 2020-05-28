@@ -3,14 +3,14 @@ import Me from "../components/Photos/Louis.jpg";
 
 export default function Bio() {
   return (
-    <div className="flex items-baseline">
-      <div className="rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 col-start-2 mt-10 flex-1">
+    <div id="bio" className="items-baseline col-start-2 self-center">
+      <div className="rounded-md border-4 border-teal-600 shadow-2xl bg-gray-400 mt-10 flex-1">
         <img
           src={Me}
-          className="rounded w-40 float-left mr-4 my-2 ml-2"
+          className="rounded w-40 object-fit float-left mr-4 my-4 ml-2"
           alt="Louis"
         />
-        <p className="ml-2 mr-2">
+        <p className="ml-2 mr-2 mt-2 clear-none">
           Hi, I'm Louis Coleman, a passionate Full Stack Web Developer, I'm from
           from Tampa, FL and currently live in Seattle, Wa. Growing up I always
           had a huge facination in computers, mainly gaming. This evolved over
