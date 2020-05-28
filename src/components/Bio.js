@@ -3,7 +3,7 @@ import Me from "../components/Photos/Louis.jpg";
 
 export default function Bio() {
   return (
-    <div id="bio" className="items-baseline col-start-2 self-center">
+    <div className="items-baseline col-start-2 self-center">
       <div className="rounded-md border-4 border-teal-600 shadow-2xl bg-gray-400 mt-10 flex-1">
         <img
           src={Me}
@@ -21,6 +21,9 @@ export default function Bio() {
           Express.js, React.js, Node.js, Database Theory, MongoDB, MySQL, CLI,
           and Git.
         </p>
+      </div>
+      <div id="projects" className="invisible">
+        dedicated to the best gf ever, Shannon
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="flex items-baseline col-start-2 row-start-3 self-center"
+      className="flex items-baseline col-start-2 row-start-5 self-center"
     >
       <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-4">
         <h1 className="underline text-center font-bold mt-2 mb-2">
