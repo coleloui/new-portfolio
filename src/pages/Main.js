@@ -9,7 +9,10 @@ import Project5 from "../components/Project5";
 
 export default function Main() {
   return (
-    <div className="lg:grid lg:grid-flow-col lg:grid-cols-3 lg:grid-rows-3 lg:gap-4 lg:flex">
+    <div
+      id="bio"
+      className="lg:grid lg:grid-flow-col lg:grid-cols-3 lg:grid-rows-5 lg:gap-4 lg:flex"
+    >
       <Bio />
       <Project1 />
       <Project2 />

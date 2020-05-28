@@ -3,15 +3,12 @@ import { HashLink as Link } from "react-router-hash-link";
 
 export default function Navbar() {
   return (
-    <div
-      id="top-of-page"
-      className="grid bg-teal-400 rounded-md font-bold h-10 border-4 border-teal-600 sticky top-0"
-    >
+    <div className="grid bg-teal-400 rounded-md font-bold h-10 border-4 border-teal-600 sticky top-0">
       <div className="text-center flex justify-around self-center">
         <Link smooth to="/#bio">
           About Me
         </Link>
-        <Link smooth to="/#project">
+        <Link smooth to="/#projects">
           Projects
         </Link>
         <Link smooth to="/#contact">
