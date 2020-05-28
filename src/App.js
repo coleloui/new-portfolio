@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Wrapper from "./components/Wrapper";
 import Main from "./pages/Main";
 import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const App = () => {
   document.title = "Louis Coleman Portfolio";
@@ -11,18 +11,9 @@ const App = () => {
     <Router>
       <Wrapper>
         <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          {/* <Route exact path="/projects">
-            <Projects />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>{" "}
-          */}
-        </Switch>
+        <Route path="/">
+          <Main />
+        </Route>
       </Wrapper>
     </Router>
   );

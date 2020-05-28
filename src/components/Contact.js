@@ -2,17 +2,18 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="flex items-baseline col-start-3 row-start-3">
-      <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-10">
+    <div
+      id="contact"
+      className="flex items-baseline col-start-2 row-start-3 self-center"
+    >
+      <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-4">
         <h1 className="underline text-center font-bold mt-2 mb-2">
           Contact Me!
         </h1>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            {
-              alert("Post Submitted");
-            }
+            alert("Post Submitted");
           }}
         >
           <div className="mb-2 ml-4 mr-4">
