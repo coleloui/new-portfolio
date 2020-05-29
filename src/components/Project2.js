@@ -9,7 +9,7 @@ export default function Project2() {
           <a
             rel="noopener noreferrer"
             className="hover:text-teal-600"
-            href="https://rocketlist.herokuapp.com/"
+            href="https://protected-lowlands-08660.herokuapp.com/"
             target="_blank"
           >
             MapleValley
@@ -21,100 +21,90 @@ export default function Project2() {
           alt="rocketlist"
         />
         <p className="ml-2 mr-2 mt-2 clear-none">
-          RocketList is a react website that we pulled inspiration from
-          Craigslist, Yahoo Answer, and Reddit. It allows for different topics
-          and for people to make a post where others can make comments. We also
-          added a feature that let users join chat rooms of a specific post so
-          that they can discuss in real time what ever they wanted to. This was
-          built using{" "}
+          Maple Valley is an online registration system for volunteers and
+          parents of campers of Girl Scouts Maple Valley Day Camp that will
+          replace paper registration and facilitate camp planning by allowing
+          registration details to be easily shared to camp planning committee.
+          This was built using{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.apollographql.com/"
+            href="https://expressjs.com/"
           >
-            apollo
+            express
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/graphql"
+            href="https://www.npmjs.com/package/express-handlebars"
           >
-            graphql
+            express-handlebars
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/popper.js"
+            href="https://www.npmjs.com/package/express-session"
           >
-            popper.js
+            express-session
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/query-string"
+            href="https://sequelize.org/"
           >
-            query-string
+            sequelize
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/react"
+            href="https://www.npmjs.com/package/connect-session-sequelize"
           >
-            react
+            connect-session-sequelize
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/react-emoji"
+            href="https://www.npmjs.com/package/mysql2"
           >
-            react-emoji
+            mysql2
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/react-scroll-to-bottom"
+            href="https://www.npmjs.com/package/bcrypt"
           >
-            react-scroll-to-bottom
+            bcrypt
           </a>
           ,{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/react-spinners"
+            href="https://nodemailer.com/about/"
           >
-            react-spinners
-          </a>
-          ,{" "}
-          <a
-            rel="noopener noreferrer"
-            className="hover:underline"
-            target="_blank"
-            href="https://www.npmjs.com/package/socket.io-client"
-          >
-            socket.io-client
+            nodemailer
           </a>
           , and{" "}
           <a
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
-            href="https://www.npmjs.com/package/tailwindcss"
+            href="https://bulma.io/"
           >
-            tailwindcss.
+            Bulma.
           </a>
         </p>
       </div>
