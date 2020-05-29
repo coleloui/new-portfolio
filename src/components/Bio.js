@@ -10,7 +10,7 @@ export default function Bio() {
           className="rounded w-40 object-fit float-left mr-4 my-4 ml-2"
           alt="Louis"
         />
-        <p className="ml-2 mr-2 mt-2 clear-none">
+        <p className="m-2 clear-none">
           Hi, I'm Louis Coleman, a passionate Full Stack Web Developer, I'm from
           from Tampa, FL and currently live in Seattle, Wa. Growing up I always
           had a huge facination in computers, mainly gaming. This evolved over
