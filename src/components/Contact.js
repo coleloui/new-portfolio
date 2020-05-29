@@ -56,6 +56,18 @@ export default function Contact() {
             >
               Send
             </button>
+            <div>
+              {window.location.hash === "#success" && (
+                <div id="success">
+                  <p>Your message has been sent!</p>
+                </div>
+              )}
+              {window.location.hash === "#error" && (
+                <div id="error">
+                  <p>An error occured while submitting the form.</p>
+                </div>
+              )}
+            </div>
           </div>
         </form>
       </div>
