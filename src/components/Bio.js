@@ -24,7 +24,7 @@ export default function Bio() {
         </p>
       </div>
       <div id="projects" className="invisible">
-        dedicated to the best gf ever, Shannon
+        dedicated to the love of my life, Shannon
       </div>
     </div>
   );
