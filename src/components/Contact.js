@@ -1,6 +1,19 @@
 import React from "react";
 
 export default function Contact() {
+  const [formData, updateFormData] = React.useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
+
+      [e.target.name]: e.target.value.trim(),
+    });
+  };
   return (
     <div
       id="contact"
@@ -11,9 +24,19 @@ export default function Contact() {
           Contact Me!
         </h1>
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            alert("Post Submitted");
+            console.log(e.target);
+            const res = await (
+              await fetch("/.netlify/functions/contact", {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+            ).json();
+            console.log("res", res);
           }}
         >
           <div className="mb-2 ml-4 mr-4">
@@ -21,10 +44,11 @@ export default function Contact() {
               Name
             </label>
             <input
-              className="shadown appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
               name="name"
               type="text"
               placeholder="John Snow"
+              onChange={handleChange}
             />
             <label
               htmlFor="email"
@@ -33,10 +57,11 @@ export default function Contact() {
               Email
             </label>
             <input
-              className="shadown appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
               name="email"
               type="email"
               placeholder="john.snow@placeholder.com"
+              onChange={handleChange}
             />
             <label
               htmlFor="message"
@@ -49,6 +74,7 @@ export default function Contact() {
               rows="5"
               name="message"
               placeholder="Hello!"
+              onChange={handleChange}
             ></textarea>
             <button
               className="bg-teal-400 hover:bg-teal-600 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline border-4 border-teal-600"
