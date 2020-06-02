@@ -1,10 +1,19 @@
 import React from "react";
 
+function getRandomString() {
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
+}
+
+const initialFormData = { name: "", email: "", message: "" };
+Object.freeze(initialFormData);
+
 export default function Contact() {
+  const [contactSubject, setContactSubject] = React.useState("placeholder");
   const [formData, updateFormData] = React.useState({
-    name: "",
-    email: "",
-    message: "",
+    ...initialFormData,
   });
 
   const handleChange = (e) => {
@@ -27,18 +36,32 @@ export default function Contact() {
           onSubmit={async (e) => {
             e.preventDefault();
             console.log(e.target);
-            const res = await (
-              await fetch("/.netlify/functions/contact", {
-                method: "POST",
-                body: JSON.stringify(formData),
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              })
-            ).json();
+            formData.subject = contactSubject;
+            const res = await fetch("/.netlify/functions/contact", {
+              method: "POST",
+              body: JSON.stringify(formData),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            if (res.ok) {
+              // alert("Message Sent");
+              // window.location.reload(false);
+              updateFormData(() => initialFormData);
+              console.log("hi dave");
+            }
             console.log("res", res);
           }}
         >
+          <input
+            type="hidden"
+            className="form-control"
+            name={getRandomString()}
+            autoComplete={getRandomString()}
+            value={contactSubject}
+            onChange={(e) => setContactSubject(e.target.value)}
+            style={{ display: "none" }}
+          />
           <div className="mb-2 ml-4 mr-4">
             <label htmlFor="name" className="block text-sm font-bold underline">
               Name
@@ -47,6 +70,7 @@ export default function Contact() {
               className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
               name="name"
               type="text"
+              value={formData.name}
               placeholder="John Snow"
               onChange={handleChange}
             />
@@ -60,6 +84,7 @@ export default function Contact() {
               className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
               name="email"
               type="email"
+              value={formData.email}
               placeholder="john.snow@placeholder.com"
               onChange={handleChange}
             />
@@ -73,6 +98,7 @@ export default function Contact() {
               className="form-textarea block shadow appearance-none border rounded w-full py-2 px-3 mb-2 leading-tight focus:outline-none focus:shadow-outline"
               rows="5"
               name="message"
+              value={formData.message}
               placeholder="Hello!"
               onChange={handleChange}
             ></textarea>
