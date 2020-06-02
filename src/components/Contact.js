@@ -15,6 +15,7 @@ export default function Contact() {
   const [formData, updateFormData] = React.useState({
     ...initialFormData,
   });
+  const [bigWin, setBigWin] = React.useState("");
 
   const handleChange = (e) => {
     updateFormData({
@@ -37,6 +38,7 @@ export default function Contact() {
             e.preventDefault();
             console.log(e.target);
             formData.subject = contactSubject;
+            setBigWin("");
             const res = await fetch("/.netlify/functions/contact", {
               method: "POST",
               body: JSON.stringify(formData),
@@ -46,9 +48,11 @@ export default function Contact() {
             });
             if (res.ok) {
               // alert("Message Sent");
-              // window.location.reload(false);
+              setBigWin("success");
               updateFormData(() => initialFormData);
               console.log("hi dave");
+            } else {
+              setBigWin("error");
             }
             console.log("res", res);
           }}
@@ -109,12 +113,12 @@ export default function Contact() {
               Send
             </button>
             <div>
-              {window.location.hash === "#success" && (
+              {bigWin === "success" && (
                 <div id="success">
                   <p>Your message has been sent!</p>
                 </div>
               )}
-              {window.location.hash === "#error" && (
+              {bigWin === "error" && (
                 <div id="error">
                   <p>An error occured while submitting the form.</p>
                 </div>
