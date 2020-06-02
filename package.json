@@ -2,7 +2,7 @@
   "name": "new-portfolio",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:51840",
   "dependencies": {
     "@sendgrid/mail": "^7.1.1",
     "@testing-library/jest-dom": "^4.2.4",
