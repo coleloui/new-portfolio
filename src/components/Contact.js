@@ -21,7 +21,7 @@ export default function Contact() {
     updateFormData({
       ...formData,
 
-      [e.target.name]: e.target.value.trim(),
+      [e.target.name]: e.target.value,
     });
   };
   return (
