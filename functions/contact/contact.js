@@ -27,8 +27,8 @@ exports.handler = async function (event, context) {
     message.message = escape(req.message);
 
     const mail = {
-      from: "coleloui123@gmail.com",
-      to: "coleloui18@gmail.com",
+      from: "noreply@louiscolemancoding.me",
+      to: "coleloui123@gmail.com",
       subject: "Portfolio Contact Form Submission",
       html: `<h1>Portfolio Contact Form Submission</h1>
 <h3><b>Name:</b> ${message.name}</h3>

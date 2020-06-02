@@ -11,15 +11,16 @@ export default function Bio() {
           alt="Louis"
         />
         <p className="m-2 clear-none">
-          Hi, I'm Louis Coleman, a passionate Full Stack Web Developer, I'm from
-          from Tampa, FL and currently live in Seattle, Wa. Growing up I always
-          had a huge facination in computers, mainly gaming. This evolved over
-          time into a love of coding, at first it was something I looked into on
-          my own however recently I was able to take part in a coding bootcamp
-          through the University of Washington where I became proficient in
-          HTML5, CSS, JavaScript, jQuery, Java, Bootstrap, Tailwind CSS,
-          Express.js, React.js, Node.js, Database Theory, MongoDB, MySQL, CLI,
-          and Git.
+          Hi, my name is Louis Coleman and I am a passionate Full Stack Web
+          Developer. I'm from from Tampa, Florida and currently live in Seattle,
+          Washington. I have always had a huge facination in computers with an
+          emphasis on gaming which has evolved over time into a love of coding.
+          Initially, it was something I lightly dabbled in during my spare time
+          which then turned more serious as I recently graduated (May 2020) from
+          the University of Washington Full Stack Coding Bootcamp where I became
+          proficient in HTML5, CSS, JavaScript, jQuery, Java, Bootstrap,
+          Tailwind CSS, Express.js, React.js, Node.js, Database Theory, MongoDB,
+          MySQL, CLI, and Git.
         </p>
       </div>
       <div id="projects" className="invisible">

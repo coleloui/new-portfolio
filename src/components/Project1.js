@@ -21,11 +21,11 @@ export default function Project1() {
           alt="rocketlist"
         />
         <p className="ml-2 mr-2 mt-2 clear-none">
-          RocketList is a react website that we pulled inspiration from
-          Craigslist, Yahoo Answer, and Reddit. It allows for different topics
+          RocketList is a React website in which we pulled inspiration from
+          Craigslist, Yahoo Answers, and Reddit. It allows for different topics
           and for people to make a post where others can make comments. We also
-          added a feature that let users join chat rooms of a specific post so
-          that they can discuss in real time what ever they wanted to. This was
+          added a feature that allows users to join chat rooms within a specific
+          post where they can discuss the topic at hand in more depth. This was
           built using{" "}
           <a
             rel="noopener noreferrer"
