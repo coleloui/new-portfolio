@@ -49,6 +49,15 @@ export default function Project1() {
             rel="noopener noreferrer"
             className="hover:underline"
             target="_blank"
+            href="https://react-redux.js.org/"
+          >
+            React Redux
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
             href="https://www.npmjs.com/package/popper.js"
           >
             popper.js
