@@ -50,7 +50,6 @@ export default function Contact() {
               // alert("Message Sent");
               setBigWin("success");
               updateFormData(() => initialFormData);
-              console.log("hi dave");
             } else {
               setBigWin("error");
             }

@@ -1,8 +1,34 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const mailer = require("@sendgrid/mail");
 const { escape, isEmail, normalizeEmail } = require("validator");
+const { inspect } = require("util");
+
+const Schema = mongoose.Schema;
+const uri = `mongodb+srv://${process.env.PORTFOLIO_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
 
 mailer.setApiKey(process.env.PORTFOLIO_SENDGRID_KEY);
+
+mongoose.connect(uri, { useNewUrlParser: true });
+
+const messageSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+  time: { type: Date, default: Date.now },
+});
+const Message = mongoose.model("Message", messageSchema);
 
 exports.handler = async function (event, context) {
   try {
@@ -15,7 +41,7 @@ exports.handler = async function (event, context) {
     }
 
     const checkEmail = isEmail(req.email);
-    const message = {};
+    const message = new Message();
 
     if (checkEmail) {
       message.email = normalizeEmail(req.email);
@@ -26,6 +52,10 @@ exports.handler = async function (event, context) {
     message.name = escape(req.name);
     message.message = escape(req.message);
 
+    console.log("saving message... message: ", message);
+    const savedMessage = await message.save();
+    console.log("message saved! savedMessage:", savedMessage);
+
     const mail = {
       from: "noreply@louiscolemancoding.me",
       to: "coleloui123@gmail.com",
@@ -35,7 +65,8 @@ exports.handler = async function (event, context) {
 <h3><b>Email:</b> ${message.email}</h3>
 <h3><b>Message:</b></h3>
 <p>${message.message}</p>
-`,
+<h3><b>savedMessage:</b></h3>
+<p>${JSON.stringify(savedMessage, null, 4)}</p>`,
     };
 
     try {
