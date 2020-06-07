@@ -9,6 +9,7 @@ export default function Project1() {
           <a
             className="hover:text-teal-600"
             href="https://rocketlist.herokuapp.com/"
+            rel="noopener noreferrer"
             target="_blank"
           >
             RocketList
@@ -17,18 +18,104 @@ export default function Project1() {
         <img
           src={RocketList}
           className="rounded object-scale-down my-2"
-          alt="rocketlist"
+          alt="rocketliskt"
         />
         <p className="ml-2 mr-2 mt-2 clear-none">
-          Hi, I'm Louis Coleman, a passionate Full Stack Web Developer, I'm from
-          from Tampa, FL and currently live in Seattle, Wa. Growing up I always
-          had a huge facination in computers, mainly gaming. This evolved over
-          time into a love of coding, at first it was something I looked into on
-          my own however recently I was able to take part in a coding bootcamp
-          through the University of Washington where I became proficient in
-          HTML5, CSS, JavaScript, jQuery, Java, Bootstrap, Tailwind CSS,
-          Express.js, React.js, Node.js, Database Theory, MongoDB, MySQL, CLI,
-          and Git.
+          RocketList is a React website in which we pulled inspiration from
+          Craigslist, Yahoo Answers, and Reddit. It allows for different topics
+          and for people to make a post where others can make comments. We also
+          added a feature that allows users to join chat rooms within a specific
+          post where they can discuss the topic at hand in more depth. This was
+          built using{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.apollographql.com/"
+          >
+            apollo
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/graphql"
+          >
+            graphql
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/popper.js"
+          >
+            popper.js
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/query-string"
+          >
+            query-string
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/react"
+          >
+            react
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/react-emoji"
+          >
+            react-emoji
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/react-scroll-to-bottom"
+          >
+            react-scroll-to-bottom
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/react-spinners"
+          >
+            react-spinners
+          </a>
+          ,{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/socket.io-client"
+          >
+            socket.io-client
+          </a>
+          , and{" "}
+          <a
+            rel="noopener noreferrer"
+            className="hover:underline"
+            target="_blank"
+            href="https://www.npmjs.com/package/tailwindcss"
+          >
+            tailwindcss.
+          </a>
         </p>
       </div>
     </div>
