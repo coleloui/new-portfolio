@@ -18,7 +18,7 @@ export default function Project1() {
         <img
           src={RocketList}
           className="rounded object-scale-down my-2"
-          alt="rocketlist"
+          alt="rocketliskt"
         />
         <p className="ml-2 mr-2 mt-2 clear-none">
           RocketList is a React website in which we pulled inspiration from
