@@ -1,12 +1,54 @@
 const mongoose = require("mongoose");
-const mailer = require("@sendgrid/mail");
 const { escape, isEmail, normalizeEmail } = require("validator");
 const { inspect } = require("util");
+const { SES, AWSError } = require("aws-sdk");
+const { SendEmailRequest, SendEmailResponse } = require("aws-sdk/clients/ses");
+
+const {
+  SES_EMAIL,
+  SES_ACCESS_KEY,
+  SES_SECRET_KEY,
+  SES_REGION,
+  SES_CHARSET,
+} = process.env;
 
 const Schema = mongoose.Schema;
-const uri = `mongodb+srv://${process.env.PORTFOLIO_DB_LOGIN}.mongodb.net/test?retryWrites=true&w=majority`;
+const uri = process.env.PORTFOLIO_DB_LOGIN;
 
-mailer.setApiKey(process.env.PORTFOLIO_SENDGRID_KEY);
+const sendEmailNotification = async (notification) => {
+  const SES_CONFIG = {
+    region: SES_REGION,
+    accessKeyId: SES_ACCESS_KEY,
+    secretAccessKey: SES_SECRET_KEY,
+  };
+
+  const ses = new SES(SES_CONFIG);
+
+  const params = {
+    Source: SES_EMAIL,
+    Destination: {
+      ToAddresses: notification.destinations,
+    },
+    Message: {
+      Subject: {
+        Data: notification.subject,
+        Charset: SES_CHARSET,
+      },
+      Body: {
+        Html: {
+          Data: notification.html,
+          Charset: SES_CHARSET,
+        },
+      },
+    },
+  };
+
+  const data = await ses.sendEmail(params).promise();
+
+  console.log("sendEmailNotification data", data);
+
+  return true;
+};
 
 mongoose.connect(uri, { useNewUrlParser: true });
 
@@ -57,8 +99,7 @@ exports.handler = async function (event, context) {
     console.log("message saved! savedMessage:", savedMessage);
 
     const mail = {
-      from: "noreply@louiscolemancoding.me",
-      to: "coleloui123@gmail.com",
+      destinations: ["coleloui18@gmail.com"],
       subject: "Portfolio Contact Form Submission",
       html: `<h1>Portfolio Contact Form Submission</h1>
 <h3><b>Name:</b> ${message.name}</h3>
@@ -71,25 +112,13 @@ exports.handler = async function (event, context) {
 
     try {
       console.log("sending email... email:", mail);
-      const mailInfo = await mailer.send(mail);
-
-      if (mailInfo[0].statusCode >= 400) {
-        console.warn("problem sending contact form notification email");
-        console.log("mail:", mail);
-        console.log("mailInfo:", mailInfo);
-        console.log("\n\n");
-      } else {
-        console.log("email sent! mailInfo:", mailInfo);
+      const mailInfo = await sendEmailNotification(mail);
+      if (!mailInfo) {
+        throw new Error("Failed to send email notification.");
       }
     } catch (err) {
       console.error(err);
-      if (err.response && err.response.body && err.response.body.errors) {
-        console.log("err.body.errors");
-        console.log(JSON.stringify(err.response.body.errors));
-        console.log();
-      }
-      console.warn("failed to send contact form notification email");
-      console.log("mail:", mail);
+      return { statusCode: 500, body: err.toString() };
     } finally {
       return { statusCode: 200, body: "" };
     }
