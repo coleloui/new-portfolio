@@ -70,7 +70,7 @@ export default function Contact() {
               Name
             </label>
             <input
-              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-none focus:shadow-outline"
               name="name"
               type="text"
               value={formData.name}
@@ -84,7 +84,7 @@ export default function Contact() {
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-non focus:shadow-outline"
+              className="shadow appearance-none border rounded py-2 px-3 w-full mb-2 leading-tight focus:outline-none focus:shadow-outline"
               name="email"
               type="email"
               value={formData.email}
