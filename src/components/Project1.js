@@ -1,5 +1,5 @@
 import React from "react";
-import RocketList from "./Photos/rocketlist.png";
+import RocketList from "./Photos/newrocketlist.png";
 
 export default function Project1() {
   return (
