@@ -1,9 +1,11 @@
 import React from "react";
 import Me from "../components/Photos/Louis.jpg";
 
-export default function Bio() {
+export default function Bio(props) {
   return (
-    <div className="items-baseline col-start-2 self-center">
+    <div
+      className={`items-baseline col-start-${props.col} row-start-${props.row} self-center`}
+    >
       <div className="rounded-md border-4 border-teal-600 shadow-2xl bg-gray-400 mt-10 flex-1">
         <img
           src={Me}
