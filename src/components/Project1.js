@@ -1,10 +1,12 @@
 import React from "react";
 import RocketList from "./Photos/newrocketlist.png";
 
-export default function Project1() {
+export default function Project1(props) {
   return (
-    <div className="col-start-1 row-start-2 self-center">
-      <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-4">
+    <div
+      className={`col-start-${props.col} row-start-${props.row} self-center`}
+    >
+      <div className="container rounded-md border-4 border-teal-600 shadow-2xl bg-gray-400 mt-4">
         <div className="text-center text-xl underline font-bold uppercase">
           <a
             className="hover:text-teal-600"

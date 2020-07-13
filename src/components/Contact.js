@@ -10,7 +10,7 @@ function getRandomString() {
 const initialFormData = { name: "", email: "", message: "" };
 Object.freeze(initialFormData);
 
-export default function Contact() {
+export default function Contact(props) {
   const [contactSubject, setContactSubject] = React.useState("placeholder");
   const [formData, updateFormData] = React.useState({
     ...initialFormData,
@@ -27,9 +27,9 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="flex items-baseline col-start-2 row-start-4 self-center"
+      className={`flex items-baseline col-start-${props.col} row-start-${props.row} self-center`}
     >
-      <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-4">
+      <div className="container rounded-md border-4 border-teal-600 shadow-2xl bg-gray-400 mt-4">
         <h1 className="underline text-center font-bold mt-2 mb-2">
           Contact Me!
         </h1>

@@ -1,9 +1,11 @@
 import React from "react";
 import RocketList from "./Photos/rocketlist.png";
 
-export default function Project4() {
+export default function Project4(props) {
   return (
-    <div className="col-start-1 row-start-4 self-center">
+    <div
+      className={`col-start-${props.col} row-start-${props.row} self-center`}
+    >
       <div className="container rounded-md border-4 border-teal-600 shadow-xl bg-gray-400 mt-4">
         <div className="text-center text-xl underline font-bold uppercase">
           <a
